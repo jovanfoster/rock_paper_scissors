@@ -1,0 +1,63 @@
+<html>
+    <body>
+        
+    </body>
+    <script>
+        function computer_play(){
+            random_select = Math.random() * 3
+            if (random_select == 0){
+                computer_choice = 'rock';
+            }
+            else if (random_select == 1){
+                computer_choice = 'paper';
+            }
+            else{
+                computer_choice = 'scissors'
+            }
+            return computer_choice;
+        }
+
+        function play_round(player_choice, computer_choice){
+            switch(player_choice){
+                case 'rock':
+                    if (computer_choice == 'scissors'){
+                        return(`You win! Rock beats Scissors!`)
+                    }
+                    else if (computer_choice == 'paper'){
+                        return(`You lose! Paper beats Rock!`)
+                    }
+                    else if (computer_choice == 'rock'){
+                        return(`It's a tie! You both played Rock!`)
+                    }
+                case 'paper':
+                    if (computer_choice == 'rock'){
+                        return(`You win! Paper beats Rock!`)
+                    }
+                    else if (computer_choice == 'scissors'){
+                        return(`You lose! Paper beats Rock!`)
+                    }
+                    else if (computer_choice == 'paper'){
+                        return(`It's a tie! You both played Paper!`)
+                    }
+                case 'scissors':
+                    if (computer_choice == 'paper'){
+                        return(`You win! Scissors beats Paper!`)
+                    }
+                    else if (computer_choice == 'rock'){
+                        return(`You lose! Rock beats Scissors!`)
+                    }
+                    else if (computer_choice == 'scissors'){
+                        return(`It's a tie! You both played scissors!`)
+                    }
+            }
+        }
+
+        function game(){
+            for (i = 0; i < 5; i++){
+                let computer_choice = computer_play();
+                let player_choice = prompt('Enter your choice (rock/paper/scissors): ').toLowerCase;
+                console.log(play_round(player_choice, computer_choice));
+            }
+        }
+    </script>
+</html>
