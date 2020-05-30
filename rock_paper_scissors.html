@@ -1,59 +1,9 @@
 <html>
     <body>
-        
+        <button class="selection" id="rock" type="submit">Rock</button>
+        <button class="selection" id="paper" type="submit">Paper</button>
+        <button class="selection" id="scissors" type="submit">Scissors</button>
+        <button id="play" type="submit">Play</button>        
     </body>
-    <script>
-        function computer_play(){
-            let choices = ['rock', 'paper', 'scissors'];
-            return choices[Math.floor(Math.random() * 3)];
-        }
-
-        function play_round(player_choice, computer_choice){
-            console.log(`You chose ${player_choice}.`);
-            if (player_choice == 'rock'){
-                if (computer_choice == 'scissors'){
-                    return (`You win! Rock beats Scissors!`);
-                }
-                else if (computer_choice == 'paper'){
-                    return (`You lose! Paper beats Rock!`);
-                }
-                else if (computer_choice == 'rock'){
-                    return (`It's a tie! You both played Rock!`);
-                }
-            }
-            else if (player_choice == 'paper'){
-                if (computer_choice == 'rock'){
-                    return (`You win! Paper beats Rock!`);
-                }
-                else if (computer_choice == 'scissors'){
-                    return (`You lose! Paper beats Rock!`);
-                }
-                else if (computer_choice == 'paper'){
-                    return (`It's a tie! You both played Paper!`);
-                }
-            }
-            else if (player_choice == 'scissors'){
-                if (computer_choice == 'paper'){
-                    return(`You win! Scissors beats Paper!`);
-                }
-                else if (computer_choice == 'rock'){
-                    return (`You lose! Rock beats Scissors!`);
-                }
-                else if (computer_choice == 'scissors'){
-                    return (`It's a tie! You both played scissors!`);
-                }
-            }
-            return ('Err: Invalid input.');
-        }
-
-        function game(){
-            for (i = 0; i < 5; i++){
-                let computer_choice = computer_play();
-                let player_choice = prompt('Enter your choice (rock/paper/scissors): ').toLowerCase();
-                console.log(play_round(player_choice, computer_choice));
-            }
-        }
-
-        game();
-    </script>
+    <script src="myScript.js"></script>
 </html>
