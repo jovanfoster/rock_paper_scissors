@@ -5,62 +5,22 @@ function computerPlay(){
 function playRound(playerChoice, computerChoice){
     pIndex = choices.indexOf(playerChoice);
     cIndex = choices.indexOf(computerChoice);
-    if (pIndex % choices.length - 1 < cIndex % choices.length - 1){
+    if ((pIndex + 1) % choices.length == cIndex){
         h1.textContent = `You win! ${playerChoice} beats ${computerChoice}!`;
         playerScore++;
+        console.log(playerChoice, '->', computerChoice);
     }
-    else if (pIndex % choices.length - 1 > cIndex % choices.length - 1){
+    else if ((cIndex + 1) % choices.length == pIndex){
         h1.textContent = `You lose. ${computerChoice} beats ${playerChoice}!`;
         computerScore++;
+        console.log(playerChoice, '<-', computerChoice);
     }
-    else if (pIndex % choices.length - 1 == cIndex % choices.length - 1){
+    else if (pIndex == cIndex){
         h1.textContent = 'Tied game.';
+        console.log(playerChoice, '--', computerChoice);
     }
     else{ h1.textContent = 'Invalid input.'; }
     scoreText.textContent = `You: ${playerScore}  Computer: ${computerScore}`;
-
-/*
-    if (playerChoice == 'rock'){
-        if (computerChoice == 'scissors'){
-            h1.textContent = `You win! Rock beats Scissors!`;
-            playerScore++;
-        }
-        else if (computerChoice == 'paper'){
-            h1.textContent = `You lose! Paper beats Rock!`;
-            computerScore++;
-        }
-        else if (computerChoice == 'rock'){
-            h1.textContent = `It's a tie! You both played Rock!`;
-        }
-    }
-    else if (playerChoice == 'paper'){
-        if (computerChoice == 'rock'){
-            h1.textContent = `You win! Paper beats Rock!`;
-            playerScore++;
-        }
-        else if (computerChoice == 'scissors'){
-            h1.textContent = `You lose! Paper beats Rock!`;
-            computerScore++;
-        }
-        else if (computerChoice == 'paper'){
-            h1.textContent = `It's a tie! You both played Paper!`;
-        }
-    }
-    else if (playerChoice == 'scissors'){
-        if (computerChoice == 'paper'){
-            h1.textContent = `You win! Scissors beats Paper!`;
-            playerScore++;
-        }
-        else if (computerChoice == 'rock'){
-            h1.textContent = `You lose! Rock beats Scissors!`;
-            computerScore++;
-        }
-        else if (computerChoice == 'scissors'){
-            h1.textContent = `It's a tie! You both played scissors!`;
-        }
-    }
-    else { h1.textContent = 'Invalid input.'; } 
-    */
 }
 
 let choices = ['paper', 'rock', 'scissors'];
